@@ -385,7 +385,7 @@ h1 {
 							$newAddress1 = str_replace(" ", "%2B", $address1);
 							$newAddress2 = str_replace(" ", "%2B", $address2);
 							
-							$resp_latlnggoogle1 = file_get_contents ( "https://maps.googleapis.com/maps/api/geocode/json?address=$newAddress1&key=AIzaSyCqt0V2s8VlZHYEjC2k1k_rWhcSDVFxwfg" );
+							$resp_latlnggoogle1 = file_get_contents ( "https://maps.googleapis.com/maps/api/geocode/json?address=$newAddress1&key=123456qwerty" );
 							$objlatlng1 = json_decode ( $resp_latlnggoogle1, true );
 							if ($objlatlng1 ['status'] == "OK") {
 								$lat1 = $objlatlng1 ['results'] ['0'] ['geometry'] ['location'] ['lat'];
@@ -394,7 +394,7 @@ h1 {
 							else{
 								echo "<h3> address 1 incorrect,please try again !! </h3><br>"; 
 							}
-							$resp_latlnggoogle2 = file_get_contents ( "https://maps.googleapis.com/maps/api/geocode/json?address=$newAddress2&key=AIzaSyCqt0V2s8VlZHYEjC2k1k_rWhcSDVFxwfg" );
+							$resp_latlnggoogle2 = file_get_contents ( "https://maps.googleapis.com/maps/api/geocode/json?address=$newAddress2&key=123456qwerty" );
 							$objlatlng2 = json_decode ( $resp_latlnggoogle2, true );
 							if ($objlatlng2 ['status'] == "OK") {
 								$lat2 = $objlatlng2 ['results'] ['0'] ['geometry'] ['location'] ['lat'];
