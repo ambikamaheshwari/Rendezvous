@@ -8,7 +8,7 @@ $data_foursq = new Foursquare ();
 <!DOCTYPE html>
 <head>
 <script
-src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCqt0V2s8VlZHYEjC2k1k_rWhcSDVFxwfg">
+src="http://maps.googleapis.com/maps/api/js?key=123456qwerty">
 </script>
 
 <script>
