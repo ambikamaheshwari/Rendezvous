@@ -17,14 +17,14 @@ class Foursquare {
 		$newCity = str_replace(" ", "%2B", $city1);
 		$result = array();
 	
-		$url_google = "https://maps.googleapis.com/maps/api/geocode/json?address=$newCity&key=AIzaSyCqt0V2s8VlZHYEjC2k1k_rWhcSDVFxwfg";
+		$url_google = "https://maps.googleapis.com/maps/api/geocode/json?address=$newCity&key=12346";
 		$resp_latlnggoogle = file_get_contents ( $url_google );
 		$objlatlng = json_decode ( $resp_latlnggoogle, true );
 		if ($objlatlng ['status'] == "OK") {
 			$lat = $objlatlng ['results'] ['0'] ['geometry'] ['location'] ['lat'];
 			$lng = $objlatlng ['results'] ['0'] ['geometry'] ['location'] ['lng'];
 	
-			$url = "https://api.foursquare.com/v2/venues/explore?query=$newName&radius=$radius_new&ll=$lat,$lng&oauth_token=34BKKF5OYKVTDBGZEWADDVHZB1NJQHZ2AEIOSOD0LRQ3T3KL&v=20151125";
+			$url = "https://api.foursquare.com/v2/venues/explore?query=$newName&radius=$radius_new&ll=$lat,$lng&oauth_token=123456qwerty&v=20151125";
 			$resp_oauthtoken = file_get_contents ($url);
 			$obj = json_decode ( $resp_oauthtoken, true );
 			if (floatval ( $obj ['meta'] ['code'] ) == 200) {
@@ -95,7 +95,7 @@ class Foursquare {
 		require_once 'rendezvousClass.php';
 		$data = new Rendezvous();
 		
-		$resp_oauthtoken = file_get_contents ( "https://api.foursquare.com/v2/venues/explore?ll=$lat1,$lng1&radius=$radius_new&oauth_token=34BKKF5OYKVTDBGZEWADDVHZB1NJQHZ2AEIOSOD0LRQ3T3KL&v=20151125");
+		$resp_oauthtoken = file_get_contents ( "https://api.foursquare.com/v2/venues/explore?ll=$lat1,$lng1&radius=$radius_new&oauth_token=123456qwerty&v=20151125");
 		$obj = json_decode ( $resp_oauthtoken, true );
 		
 		$result = array ();
@@ -150,7 +150,7 @@ class Foursquare {
 	// Search by Zipcode + radius + rating
 	public function ZipRadiusRating($zipcode1,$radius1,$rating1) {
 		$result = array();
-		$resp_latlnggoogle = file_get_contents ( "https://maps.googleapis.com/maps/api/geocode/json?address=$zipcode1&key=AIzaSyCqt0V2s8VlZHYEjC2k1k_rWhcSDVFxwfg");
+		$resp_latlnggoogle = file_get_contents ( "https://maps.googleapis.com/maps/api/geocode/json?address=$zipcode1&key=123456qwerty");
 		$objlatlng = json_decode ( $resp_latlnggoogle, true );
 		if ($objlatlng ['status'] == "OK") {
 			$gglat = $objlatlng ['results'] ['0'] ['geometry'] ['location'] ['lat'];
@@ -171,7 +171,7 @@ class Foursquare {
 		$data = new Rendezvous();
 		$newName = str_replace(" ", "%2B", $name1);
 		
-		$url_foursq = "https://api.foursquare.com/v2/venues/explore?ll=$lat1,$long1&query=$newName&radius=$radius_new&oauth_token=34BKKF5OYKVTDBGZEWADDVHZB1NJQHZ2AEIOSOD0LRQ3T3KL&v=20151125";
+		$url_foursq = "https://api.foursquare.com/v2/venues/explore?ll=$lat1,$long1&query=$newName&radius=$radius_new&oauth_token=123456qwerty&v=20151125";
 		$resp_oauthtoken = file_get_contents ($url_foursq);
 		
 		$obj = json_decode ( $resp_oauthtoken, true );
@@ -225,7 +225,7 @@ class Foursquare {
 	// Search by Zipcode + Name + radius + rating
 	public function ZipNameRadiusRating($name1,$zipcode1,$radius1,$rating1) {
 		$result = array();
-		$resp_latlnggoogle = file_get_contents ( "https://maps.googleapis.com/maps/api/geocode/json?address=$zipcode1&key=AIzaSyCqt0V2s8VlZHYEjC2k1k_rWhcSDVFxwfg");
+		$resp_latlnggoogle = file_get_contents ( "https://maps.googleapis.com/maps/api/geocode/json?address=$zipcode1&key=123456qwerty");
 		$objlatlng = json_decode ( $resp_latlnggoogle, true );
 		if ($objlatlng ['status'] == "OK") {
 			$gglat = $objlatlng ['results'] ['0'] ['geometry'] ['location'] ['lat'];
@@ -246,7 +246,7 @@ class Foursquare {
 		$data = new Rendezvous();
 		$newCity = str_replace(" ", "%2B", $city1);
 		
-		$resp_oauthtoken = file_get_contents ( "https://api.foursquare.com/v2/venues/explore?ll=$lat1,$lng1&radius=$radius_new&near=$newCity&oauth_token=34BKKF5OYKVTDBGZEWADDVHZB1NJQHZ2AEIOSOD0LRQ3T3KL&v=20151125");
+		$resp_oauthtoken = file_get_contents ( "https://api.foursquare.com/v2/venues/explore?ll=$lat1,$lng1&radius=$radius_new&near=$newCity&oauth_token=123456qwerty&v=20151125");
 		$obj = json_decode ( $resp_oauthtoken, true );
 		
 		$result = array ();
